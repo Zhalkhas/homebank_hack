@@ -23,7 +23,7 @@ class ProfilePage extends StatelessWidget {
                             currentAccountPicture: const Icon(
                               Icons.account_circle,
                               color: Colors.white,
-                            size: 80,
+                              size: 80,
                             ),
                             accountName:
                                 Text('${profile.name} ${profile.surname}'),

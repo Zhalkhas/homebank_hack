@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:homebankhack/profile/profile.dart';
 import 'package:homebankhack/qr/qr.dart';
