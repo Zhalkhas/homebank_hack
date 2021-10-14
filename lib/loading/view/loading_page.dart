@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:homebankhack/home/home.dart';
 import 'package:rive/rive.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -10,12 +12,18 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
-  late RiveAnimationController _animationController;
+  late final RiveAnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    _animationController = OneShotAnimation('go');
+    _animationController = OneShotAnimation('go', onStart: () {
+      Future<void>.delayed(const Duration(seconds: 2))
+          .then((_) => Navigator.of(context).pushReplacement(
+                MaterialPageRoute<HomePage>(
+                    builder: (context) => const HomePage()),
+              ));
+    });
   }
 
   @override
