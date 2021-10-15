@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData(
+  fontFamily: 'Gilroy',
   brightness: Brightness.light,
   primaryColor: const Color(0xfff3253c),
   primaryColorBrightness: Brightness.dark,

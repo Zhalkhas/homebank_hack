@@ -18,7 +18,7 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     _animationController = OneShotAnimation('go', onStart: () {
-      Future<void>.delayed(const Duration(seconds: 2))
+      Future<void>.delayed(const Duration(seconds: 1))
           .then((_) => Navigator.of(context).pushReplacement(
                 MaterialPageRoute<HomePage>(
                     builder: (context) => const HomePage()),

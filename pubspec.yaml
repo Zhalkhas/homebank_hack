@@ -7,14 +7,17 @@ environment:
   sdk: ">=2.13.0 <3.0.0"
 
 dependencies:
+  animations: ^2.0.0
   bloc: ^7.2.0
   camera: ^0.9.4+1
+  carousel_slider: ^4.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.0
   flutter_gen: ^4.0.0
   flutter_localizations:
     sdk: flutter
+  font_awesome_flutter: 9.1.0
   freezed_annotation: ^0.15.0
   intl: ^0.17.0
   rive: ^0.7.18
@@ -32,3 +35,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/loading_logo.riv
+  fonts:
+    - family: Girloy
+      fonts:
+        - asset: assets/fonts/Gilroy-Black.ttf
+        - asset: assets/fonts/Gilroy-Medium.ttf
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-Semibold.ttf
+        - asset: assets/fonts/Gilroy-Thin.ttf
+        - asset: assets/fonts/Gilroy-ThinItalic.ttf
+        - asset: assets/fonts/Gilroy-UltraLight.ttf
