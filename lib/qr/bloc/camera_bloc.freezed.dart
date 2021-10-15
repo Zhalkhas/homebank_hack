@@ -20,6 +20,12 @@ class _$CameraEventTearOff {
   _loadCameras loadCameras() {
     return const _loadCameras();
   }
+
+  _detectedQR detectedQR(String qrCode) {
+    return _detectedQR(
+      qrCode,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +36,38 @@ mixin _$CameraEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadCameras,
+    required TResult Function(String qrCode) detectedQR,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_loadCameras value) loadCameras,
+    required TResult Function(_detectedQR value) detectedQR,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,6 +130,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadCameras,
+    required TResult Function(String qrCode) detectedQR,
   }) {
     return loadCameras();
   }
@@ -126,6 +139,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
   }) {
     return loadCameras?.call();
   }
@@ -134,6 +148,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
     required TResult orElse(),
   }) {
     if (loadCameras != null) {
@@ -146,6 +161,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_loadCameras value) loadCameras,
+    required TResult Function(_detectedQR value) detectedQR,
   }) {
     return loadCameras(this);
   }
@@ -154,6 +170,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
   }) {
     return loadCameras?.call(this);
   }
@@ -162,6 +179,7 @@ class _$_loadCameras implements _loadCameras {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
     required TResult orElse(),
   }) {
     if (loadCameras != null) {
@@ -176,6 +194,138 @@ abstract class _loadCameras implements CameraEvent {
 }
 
 /// @nodoc
+abstract class _$detectedQRCopyWith<$Res> {
+  factory _$detectedQRCopyWith(
+          _detectedQR value, $Res Function(_detectedQR) then) =
+      __$detectedQRCopyWithImpl<$Res>;
+  $Res call({String qrCode});
+}
+
+/// @nodoc
+class __$detectedQRCopyWithImpl<$Res> extends _$CameraEventCopyWithImpl<$Res>
+    implements _$detectedQRCopyWith<$Res> {
+  __$detectedQRCopyWithImpl(
+      _detectedQR _value, $Res Function(_detectedQR) _then)
+      : super(_value, (v) => _then(v as _detectedQR));
+
+  @override
+  _detectedQR get _value => super._value as _detectedQR;
+
+  @override
+  $Res call({
+    Object? qrCode = freezed,
+  }) {
+    return _then(_detectedQR(
+      qrCode == freezed
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_detectedQR implements _detectedQR {
+  const _$_detectedQR(this.qrCode);
+
+  @override
+  final String qrCode;
+
+  @override
+  String toString() {
+    return 'CameraEvent.detectedQR(qrCode: $qrCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _detectedQR &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, qrCode);
+
+  @JsonKey(ignore: true)
+  @override
+  _$detectedQRCopyWith<_detectedQR> get copyWith =>
+      __$detectedQRCopyWithImpl<_detectedQR>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCameras,
+    required TResult Function(String qrCode) detectedQR,
+  }) {
+    return detectedQR(qrCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
+  }) {
+    return detectedQR?.call(qrCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCameras,
+    TResult Function(String qrCode)? detectedQR,
+    required TResult orElse(),
+  }) {
+    if (detectedQR != null) {
+      return detectedQR(qrCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_loadCameras value) loadCameras,
+    required TResult Function(_detectedQR value) detectedQR,
+  }) {
+    return detectedQR(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
+  }) {
+    return detectedQR?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_loadCameras value)? loadCameras,
+    TResult Function(_detectedQR value)? detectedQR,
+    required TResult orElse(),
+  }) {
+    if (detectedQR != null) {
+      return detectedQR(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _detectedQR implements CameraEvent {
+  const factory _detectedQR(String qrCode) = _$_detectedQR;
+
+  String get qrCode;
+  @JsonKey(ignore: true)
+  _$detectedQRCopyWith<_detectedQR> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$CameraStateTearOff {
   const _$CameraStateTearOff();
 
@@ -186,6 +336,12 @@ class _$CameraStateTearOff {
   _loaded loaded(CameraController controller) {
     return _loaded(
       controller,
+    );
+  }
+
+  _qrDetected qrDetected(String qrCode) {
+    return _qrDetected(
+      qrCode,
     );
   }
 
@@ -205,6 +361,7 @@ mixin _$CameraState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(CameraController controller) loaded,
+    required TResult Function(String qrCode) qrDetected,
     required TResult Function(Object err) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -212,6 +369,7 @@ mixin _$CameraState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -219,6 +377,7 @@ mixin _$CameraState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
     required TResult orElse(),
   }) =>
@@ -227,6 +386,7 @@ mixin _$CameraState {
   TResult map<TResult extends Object?>({
     required TResult Function(_initial value) initial,
     required TResult Function(_loaded value) loaded,
+    required TResult Function(_qrDetected value) qrDetected,
     required TResult Function(_error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -234,6 +394,7 @@ mixin _$CameraState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -241,6 +402,7 @@ mixin _$CameraState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
     required TResult orElse(),
   }) =>
@@ -303,6 +465,7 @@ class _$_initial implements _initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(CameraController controller) loaded,
+    required TResult Function(String qrCode) qrDetected,
     required TResult Function(Object err) error,
   }) {
     return initial();
@@ -313,6 +476,7 @@ class _$_initial implements _initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
   }) {
     return initial?.call();
@@ -323,6 +487,7 @@ class _$_initial implements _initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
     required TResult orElse(),
   }) {
@@ -337,6 +502,7 @@ class _$_initial implements _initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_initial value) initial,
     required TResult Function(_loaded value) loaded,
+    required TResult Function(_qrDetected value) qrDetected,
     required TResult Function(_error value) error,
   }) {
     return initial(this);
@@ -347,6 +513,7 @@ class _$_initial implements _initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
   }) {
     return initial?.call(this);
@@ -357,6 +524,7 @@ class _$_initial implements _initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
     required TResult orElse(),
   }) {
@@ -435,6 +603,7 @@ class _$_loaded implements _loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(CameraController controller) loaded,
+    required TResult Function(String qrCode) qrDetected,
     required TResult Function(Object err) error,
   }) {
     return loaded(controller);
@@ -445,6 +614,7 @@ class _$_loaded implements _loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
   }) {
     return loaded?.call(controller);
@@ -455,6 +625,7 @@ class _$_loaded implements _loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
     required TResult orElse(),
   }) {
@@ -469,6 +640,7 @@ class _$_loaded implements _loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_initial value) initial,
     required TResult Function(_loaded value) loaded,
+    required TResult Function(_qrDetected value) qrDetected,
     required TResult Function(_error value) error,
   }) {
     return loaded(this);
@@ -479,6 +651,7 @@ class _$_loaded implements _loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
   }) {
     return loaded?.call(this);
@@ -489,6 +662,7 @@ class _$_loaded implements _loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
     required TResult orElse(),
   }) {
@@ -505,6 +679,150 @@ abstract class _loaded implements CameraState {
   CameraController get controller;
   @JsonKey(ignore: true)
   _$loadedCopyWith<_loaded> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$qrDetectedCopyWith<$Res> {
+  factory _$qrDetectedCopyWith(
+          _qrDetected value, $Res Function(_qrDetected) then) =
+      __$qrDetectedCopyWithImpl<$Res>;
+  $Res call({String qrCode});
+}
+
+/// @nodoc
+class __$qrDetectedCopyWithImpl<$Res> extends _$CameraStateCopyWithImpl<$Res>
+    implements _$qrDetectedCopyWith<$Res> {
+  __$qrDetectedCopyWithImpl(
+      _qrDetected _value, $Res Function(_qrDetected) _then)
+      : super(_value, (v) => _then(v as _qrDetected));
+
+  @override
+  _qrDetected get _value => super._value as _qrDetected;
+
+  @override
+  $Res call({
+    Object? qrCode = freezed,
+  }) {
+    return _then(_qrDetected(
+      qrCode == freezed
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_qrDetected implements _qrDetected {
+  const _$_qrDetected(this.qrCode);
+
+  @override
+  final String qrCode;
+
+  @override
+  String toString() {
+    return 'CameraState.qrDetected(qrCode: $qrCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _qrDetected &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, qrCode);
+
+  @JsonKey(ignore: true)
+  @override
+  _$qrDetectedCopyWith<_qrDetected> get copyWith =>
+      __$qrDetectedCopyWithImpl<_qrDetected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CameraController controller) loaded,
+    required TResult Function(String qrCode) qrDetected,
+    required TResult Function(Object err) error,
+  }) {
+    return qrDetected(qrCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
+    TResult Function(Object err)? error,
+  }) {
+    return qrDetected?.call(qrCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
+    TResult Function(Object err)? error,
+    required TResult orElse(),
+  }) {
+    if (qrDetected != null) {
+      return qrDetected(qrCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_initial value) initial,
+    required TResult Function(_loaded value) loaded,
+    required TResult Function(_qrDetected value) qrDetected,
+    required TResult Function(_error value) error,
+  }) {
+    return qrDetected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_initial value)? initial,
+    TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
+    TResult Function(_error value)? error,
+  }) {
+    return qrDetected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_initial value)? initial,
+    TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
+    TResult Function(_error value)? error,
+    required TResult orElse(),
+  }) {
+    if (qrDetected != null) {
+      return qrDetected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _qrDetected implements CameraState {
+  const factory _qrDetected(String qrCode) = _$_qrDetected;
+
+  String get qrCode;
+  @JsonKey(ignore: true)
+  _$qrDetectedCopyWith<_qrDetected> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -571,6 +889,7 @@ class _$_error implements _error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(CameraController controller) loaded,
+    required TResult Function(String qrCode) qrDetected,
     required TResult Function(Object err) error,
   }) {
     return error(err);
@@ -581,6 +900,7 @@ class _$_error implements _error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
   }) {
     return error?.call(err);
@@ -591,6 +911,7 @@ class _$_error implements _error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(CameraController controller)? loaded,
+    TResult Function(String qrCode)? qrDetected,
     TResult Function(Object err)? error,
     required TResult orElse(),
   }) {
@@ -605,6 +926,7 @@ class _$_error implements _error {
   TResult map<TResult extends Object?>({
     required TResult Function(_initial value) initial,
     required TResult Function(_loaded value) loaded,
+    required TResult Function(_qrDetected value) qrDetected,
     required TResult Function(_error value) error,
   }) {
     return error(this);
@@ -615,6 +937,7 @@ class _$_error implements _error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
   }) {
     return error?.call(this);
@@ -625,6 +948,7 @@ class _$_error implements _error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_initial value)? initial,
     TResult Function(_loaded value)? loaded,
+    TResult Function(_qrDetected value)? qrDetected,
     TResult Function(_error value)? error,
     required TResult orElse(),
   }) {
