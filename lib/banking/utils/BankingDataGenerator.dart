@@ -196,13 +196,13 @@ List<BankingHomeModel> bankingHomeList1() {
 List<BankingHomeModel2> bankingHomeList2() {
   List<BankingHomeModel2> list = [];
 
-  var list1 = BankingHomeModel2(title: "Оплата с Paypal", icon: Banking_ic_Paypal, color: Banking_BalanceColor, charge: "+₸50.000");
+  var list1 = BankingHomeModel2(title: "Оплата с Paypal", icon: Banking_ic_Paypal, color: Banking_BalanceColor, charge: "+₸50.000", svg: false);
   list.add(list1);
 
-  var list2 = BankingHomeModel2(title: "Перевод Mastercard", icon: Banking_ic_MasterCard, color: Banking_Primary, charge: "+₸20.000");
+  var list2 = BankingHomeModel2(title: "Перевод Mastercard", icon: Banking_ic_MasterCard, color: Banking_Primary, charge: "+₸20.000", svg: false);
   list.add(list2);
 
-  var list3 = BankingHomeModel2(title: "Покупка в Sulpak", icon: Banking_ic_Wallet, color: Banking_Primary, charge: "-₸900.000");
+  var list3 = BankingHomeModel2(title: "Покупка в Sulpak", icon: Banking_ic_Wallet, color: Banking_Primary, charge: "-₸900.000", svg: false);
   list.add(list3);
 
   return list;

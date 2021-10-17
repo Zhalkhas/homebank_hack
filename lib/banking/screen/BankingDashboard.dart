@@ -3,6 +3,7 @@ import 'package:bankingapp/banking/screen/BankingMenu.dart';
 import 'package:bankingapp/banking/screen/BankingPayment.dart';
 import 'package:bankingapp/banking/screen/BankingSaving.dart';
 import 'package:bankingapp/banking/screen/PurchaseMoreScreen.dart';
+import 'package:bankingapp/banking/screen/hc/shop/shop_start_page.dart';
 import 'package:bankingapp/banking/utils/BankingBottomNavigationBar.dart';
 import 'package:bankingapp/banking/utils/BankingColors.dart';
 import 'package:bankingapp/banking/utils/BankingImages.dart';
@@ -24,8 +25,7 @@ class _BankingDashboardState extends State<BankingDashboard> {
   var selectedIndex = 0;
   var pages = [
     BankingHome1(),
-    BankingInvoiceDetail(),
-    BankingPayment(),
+    PurchaseMoreScreen(),
     BankingSaving(),
     BankingMenu(),
   ];
@@ -36,20 +36,16 @@ class _BankingDashboardState extends State<BankingDashboard> {
     selectedIndex = 0;
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        systemNavigationBarContrastEnforced: true,
-        statusBarColor: Colors.black,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-        systemNavigationBarColor: Colors.white));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          systemNavigationBarContrastEnforced: false,
+          statusBarColor: Colors.black,
+          statusBarIconBrightness: Brightness.light,
+          statusBarBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.white),
+    );
 
     return Scaffold(
       backgroundColor: Banking_app_Background,
@@ -59,7 +55,10 @@ class _BankingDashboardState extends State<BankingDashboard> {
         height: 65,
         child: FloatingActionButton(
           backgroundColor: color_accent,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => ShopStartPage()));
+          },
           elevation: 2,
           child: const Icon(
             Icons.shopping_cart,
@@ -68,7 +67,7 @@ class _BankingDashboardState extends State<BankingDashboard> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle( ),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 12,
         elevation: 3,
         color: Colors.white,
@@ -81,9 +80,8 @@ class _BankingDashboardState extends State<BankingDashboard> {
                 color: color_accent,
               ),
               onPressed: () {
-                setState(() {
-                  selectedIndex = 0;
-                });
+
+
               },
             ),
             IconButton(
@@ -92,9 +90,8 @@ class _BankingDashboardState extends State<BankingDashboard> {
                 color: color_accent,
               ),
               onPressed: () {
-                setState(() {
-                  selectedIndex = 1;
-                });
+
+
               },
             ),
             const Padding(
@@ -106,9 +103,8 @@ class _BankingDashboardState extends State<BankingDashboard> {
                 color: color_accent,
               ),
               onPressed: () {
-                setState(() {
-                  selectedIndex = 2;
-                });
+
+
               },
             ),
             IconButton(
@@ -117,9 +113,8 @@ class _BankingDashboardState extends State<BankingDashboard> {
                 color: color_accent,
               ),
               onPressed: () {
-                setState(() {
-                  selectedIndex = 3;
-                });
+
+
               },
             ),
           ],

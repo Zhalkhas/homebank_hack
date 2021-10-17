@@ -78,11 +78,19 @@ class BankingHome1State extends State<BankingHome1> {
                                 //         fontFamily: fontRegular)),
                               ]
                             : [
-                                Text("Недавние транзакции",
-                                    style: primaryTextStyle(
-                                        color: Banking_TextColorWhite,
-                                        size: 20,
-                                        fontFamily: fontRegular)),
+                                Text(
+                                  "Недавние транзакции",
+                                  style: TextStyle(
+                                    color: Banking_TextColorWhite,
+                                    fontSize: 22,
+                                    fontFamily: fontRegular,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  // style: primaryTextStyle(
+                                  //     color: Banking_TextColorWhite,
+                                  //     size: 20,
+                                  //     fontFamily: fontRegular),
+                                ),
                               ],
                       ).expand(),
                       Icon(Icons.notifications,
@@ -282,8 +290,11 @@ class BankingHome1State extends State<BankingHome1> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(data.icon!,
-                              height: 30, width: 30, color: color_accent),
+                          data.svg
+                              ? SvgPicture.asset(data.icon!,
+                                  height: 30, width: 30, color: color_accent)
+                              : Image.asset(data.icon!,
+                                  height: 30, width: 30, color: color_accent),
                           10.width,
                           Text(data.title!,
                                   style: primaryTextStyle(

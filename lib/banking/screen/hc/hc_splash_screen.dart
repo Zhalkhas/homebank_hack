@@ -1,9 +1,12 @@
 import 'package:bankingapp/banking/screen/BankingWalkThrough.dart';
 import 'package:bankingapp/banking/utils/BankingColors.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rive/rive.dart';
+
+import '../BankingDashboard.dart';
 
 class HomeCreditSplashScreen extends StatefulWidget {
   const HomeCreditSplashScreen({Key? key}) : super(key: key);
@@ -18,13 +21,7 @@ class _HomeCreditSplashScreenState extends State<HomeCreditSplashScreen> {
   @override
   void initState() {
     super.initState();
-    _animationController = OneShotAnimation('go', onStart: () {
-      Future<void>.delayed(const Duration(seconds: 1))
-          .then((_) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute<BankingWalkThrough>(
-            builder: (context) => BankingWalkThrough()),
-      ));
-    });
+    _animationController = OneShotAnimation('go');
   }
 
   @override
@@ -36,7 +33,7 @@ class _HomeCreditSplashScreenState extends State<HomeCreditSplashScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        systemNavigationBarContrastEnforced: true,
+        systemNavigationBarContrastEnforced: false,
         statusBarColor: Colors.black,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.dark,
@@ -45,15 +42,50 @@ class _HomeCreditSplashScreenState extends State<HomeCreditSplashScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Center(
-          child: RiveAnimation.asset(
-            'assets/anim/loading_logo.riv',
-            animations: const ['go'],
-            controllers: [_animationController],
-          ),
-        ),
-      ),
+          padding: const EdgeInsets.all(10),
+          child: SafeArea(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 2,
+                    child: RiveAnimation.asset(
+                      'assets/anim/loading_logo.riv',
+                      animations: const ['go'],
+                      controllers: [_animationController],
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      GestureDetector(
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 5,
+                          height: MediaQuery.of(context).size.width / 5,
+                          child: FlareActor(
+                            "assets/anim/finger.flr",
+                            alignment: Alignment.center,
+                            fit: BoxFit.contain,
+                            animation: "loop",
+                          ),
+                        ),
+                        onLongPress: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => BankingDashboard(),
+                            ),
+                          );
+                        },
+                      ),
+                      Text(
+                        'Войти',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )
+                    ],
+                  )
+                ]),
+          )),
     );
   }
 }

@@ -11,7 +11,7 @@ const Banking_TextColorOrange = Color(0xFFF4413D);
 const Banking_TextColorYellow = Color(0xFFff8c42);
 const Banking_TextLightGreenColor = Color(0xFF8ed16f);
 
-const Banking_app_Background = Color(0xFFf3f5f9);
+const Banking_app_Background = Color(0xfff3f5f9);
 const Banking_blackColor = Color(0xFF070706);
 const Banking_view_color = Color(0XFFDADADA);
 const Banking_blackLightColor = Color(0xFF242525);

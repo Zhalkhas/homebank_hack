@@ -73,6 +73,20 @@ class BankingHomeModel2 {
   String? icon = "";
   Color? color;
   String? charge = "";
+  bool svg = false;
 
-  BankingHomeModel2({this.title, this.icon, this.color, this.charge});
+  BankingHomeModel2({this.title, this.icon, this.color, this.charge, required this.svg});
 }
+
+class ShopListWrapper {
+  String? title = "";
+  String? icon = "";
+  Color? color;
+  String? charge = "";
+  bool svg = false;
+  Color? iconColor;
+
+  ShopListWrapper({this.title, this.icon, this.color, this.charge, required this.svg, this.iconColor});
+}
+
+
