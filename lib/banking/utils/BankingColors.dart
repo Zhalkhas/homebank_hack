@@ -33,4 +33,4 @@ const Banking_pinkLightColor = Color(0xFFE7586A);
 const Banking_purpleColor = Color(0xFFAD3AC3);
 
 
-const color_accent = Color.fromRGBO(244, 37, 60, 1);
+const color_accent = Color.fromRGBO(244, 37, 60, 1.0);

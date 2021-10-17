@@ -134,6 +134,7 @@ class ShopStartPageState extends State<ShopStartPage> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+        heroTag: "back_button",
         backgroundColor: color_accent,
         isExtended: true,
         onPressed: () {
